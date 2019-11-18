@@ -19,7 +19,7 @@ echo 0 > /proc/sys/kernel/perf_even_paranoid
 ```
 
 Record and Report
-````
+```
 perf record -e cpu-cycles,instructions --vmlinux=/lib/modules/4.17.0/build/vmlinux $APP
 perf report
 ```
