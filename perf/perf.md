@@ -6,7 +6,7 @@ Record and Report hardware counters that reports application, kernel, and librar
 
 Note: the vmlinux given an example of choosing your Linux kernel for profiling both application and the OS
 
-Enable kernel profiling in sysctl conf. Requires sudo permission
+Enable kernel profiling in /etc/sysctl conf. Requires sudo permission
 
 ```
 kernel.perf_event_paranoid = -1
@@ -15,7 +15,7 @@ kernel.perf_event_paranoid = -1
 Enable kernel profiling for perf.
 ```
 sudo su
-echo 0 > /proc/sys/kernel/perf_even_paranoid
+echo 0 > /proc/sys/kernel/perf_event_paranoid
 ```
 
 Record and Report
