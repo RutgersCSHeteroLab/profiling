@@ -1,8 +1,9 @@
 
 
 
-Record and hardware counters
--------------------------
+Record and Report hardware counters that reports application, kernel, and library stats.
+----------------------------------------------------------------------------------------
+
 Note: the vmlinux given an example of choosing your Linux kernel for profiling both application and the OS
 
 Enable kernel profiling in sysctl conf. Requires sudo permission
@@ -17,6 +18,7 @@ sudo su
 echo 0 > /proc/sys/kernel/perf_even_paranoid
 ```
 
+Record and Report
 ````
 perf record -e cpu-cycles,instructions --vmlinux=/lib/modules/4.17.0/build/vmlinux $APP
 perf report
