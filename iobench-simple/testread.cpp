@@ -241,6 +241,7 @@ off_t random(char *buf, int buffsize, FILE *fp, off_t filesize,
       g_thpool = thpool_init(g_num_threads-1);
       assert(g_thpool);
     }
+
     //fprintf(stderr, "g_ntimes_done %lu, g_ntimes %lu \n", g_ntimes_done, g_ntimes);
     while (g_ntimes_done < g_ntimes) {
       for (i = 0; i < g_num_threads; i++) {
@@ -302,7 +303,6 @@ int OpenFiles(char *fname, const char *mode) {
     assert(g_fparr[i]);
     g_fdarr[i] = fileno(g_fparr[i]);
 
-    //fprintf(stderr,"thrdfilesz %lu \n",thrdfilesz); 
     if (g_fparr[i] != NULL) {
       filesz = GetFileSize(buffer);
       g_filesize = filesz;
