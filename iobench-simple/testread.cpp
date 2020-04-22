@@ -454,20 +454,18 @@ int main(int argc, char *argv[]) {
     g_filesize = FILESIZE;
   }
 
-  /*Currently only for single thread*/
+  /*TODO: Zipfian distribution
+   *  Currently only for single thread
+   */
   //g_alpha = 0.9999;
-  g_numblocks = g_filesize/buffsize;
-  //fprintf(stderr,"g_numblocks %u %u \n", g_filesize, g_numblocks);
   //rand_val(g_numblocks-10000);
   //read_zipf_number();
+ 
+  g_numblocks = g_filesize/buffsize;
 
-   //run_mem_bw(isSeq);
   do_IO(isSeq, fname, buffsize, WRITE);
-  /*READ is 0 and write is 1*/
   //do_IO(isSeq, fname, buffsize, READ); 
-  ///unlink (fname);
-  //Write(1, fname, buffsize);
-  //Read(1, fname, buffsize); 
+
   return 0;
 }
 
